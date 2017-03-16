@@ -1,0 +1,107 @@
+@font-face {
+    font-family: 'MullerExtraBold';
+    src: url('../fonts/MullerExtraBold.otf');
+}
+@font-face {
+    font-family: 'RobotoBold';
+    src: url('../fonts/RobotoBold.woff');
+}
+body {
+    font-size: 18px;
+    font-family: MullerExtraBold, Arial, Verdana;
+    background: url("../img/bg-index.jpg") 50% 50% no-repeat;
+}
+.container {
+    width: 960px;
+    margin: 0 auto;
+    /*outline: 1px solid red;*/
+}
+.main-title {
+    margin-top: 25px;
+    margin-bottom: 15px;
+    font-size: 72px;
+    color: #18537e;
+    /*color: #ffffff;*/
+    /*color: #2b5a51;*/
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 12px;
+}
+.slogan {
+    display: block;
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 50px;
+    font-family: RobotoBold;
+    text-transform: uppercase;
+    color: #18537e;
+    /*color: #ffffff;*/
+    letter-spacing: 19px;
+}
+.menu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 0;
+}
+.menu__item {
+    display: inline-block;
+    vertical-align: top;
+}
+.menu__link {
+    display: inline-block;
+    margin-left: 108px;
+    padding: 20px;
+    font-size: 18px;
+    font-family: RobotoBold;
+    vertical-align: top;
+    text-transform: uppercase;
+    color: #18537e;
+    text-decoration: none;
+}
+
+.menu__item:nth-child(2) .menu__link {
+    margin-left: 41px;
+}
+.menu__item:last-child .menu__link {
+    margin-left: 41px;
+}
+.menu__link:hover,
+.menu__link-active{
+    color: #ffffff;
+}
+
+.gerb {
+    display: block;
+    width: 500px;
+    margin: 0 auto;
+    /*outline: 1px solid red;*/
+}
+/*------ photogallery.phph -------*/
+.inner-title {
+    margin-top: 10px;
+    margin-bottom: 25px;
+    font-size: 60px;
+    color: #18537e;
+    /*color: #ffffff;*/
+    /*color: #2b5a51;*/
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 12px;
+}
+.photo{
+    /*padding-top: 50px;*/
+    font-size: 0;
+}
+.photo__item{
+    display: inline-block;
+    width: 300px;
+    margin: 0 30px 30px 0;
+    vertical-align: top;
+}
+.photo__item:nth-child(3n){
+    margin-right: 0;
+}
+.photo__item img{
+    width: 300px;
+}

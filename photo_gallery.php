@@ -13,7 +13,7 @@
 
 <div class="container">
     <ul class="menu">
-        <li class="menu__item"><a class="menu__link" href="">поиск организаций</a></li>
+        <li class="menu__item"><a class="menu__link" href="search.php">поиск организаций</a></li>
         <li class="menu__item"><a class="menu__link" href="index.php">на главную</a></li>
         <li class="menu__item"><a class="menu__link" href="train_timetables.php">расписание поездов</a></li>
     </ul>

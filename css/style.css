@@ -9,7 +9,7 @@
 body {
     font-size: 18px;
     font-family: MullerExtraBold, Arial, Verdana;
-    background: url("../img/bg-index.jpg") 50% 50% no-repeat;
+    background: url("../img/bg-ind4.jpg") 50% 0 no-repeat;
 }
 .container {
     width: 960px;
@@ -21,9 +21,7 @@ body {
     margin-bottom: 15px;
     font-size: 72px;
     color: #18537e;
-    /*color: #ffffff;*/
-    /*color: #2b5a51;*/
-    text-align: center;
+     text-align: center;
     text-transform: uppercase;
     letter-spacing: 12px;
 }
@@ -35,8 +33,7 @@ body {
     font-family: RobotoBold;
     text-transform: uppercase;
     color: #18537e;
-    /*color: #ffffff;*/
-    letter-spacing: 19px;
+      letter-spacing: 19px;
 }
 .menu {
     margin: 0;
@@ -77,8 +74,8 @@ body {
     margin: 0 auto;
     /*outline: 1px solid red;*/
 }
-/*------ photogallery.phph -------*/
-.inner-title {
+/*------ photo_gallery.phph -------*/
+.inner__title {
     margin-top: 10px;
     margin-bottom: 25px;
     font-size: 60px;
@@ -104,4 +101,43 @@ body {
 }
 .photo__item img{
     width: 300px;
+}
+/*------- train_timetables.php__---------*/
+.inner__title--small {
+    margin-bottom: 30px;
+    font-size: 43px;
+    letter-spacing: 10px;
+}
+.timetables{
+    width: 800px;
+    margin: 0 auto;
+    font-size: 16px;
+    font-family: RobotoBold;
+    background: linear-gradient(#c8e3f8, #d5d9e2);
+    border: 1px solid #000;
+    /*color: #ffffff;*/
+}
+.timetables__header th{
+    border: 1px solid #000;
+}
+.timetables tr{
+    padding: 5px;
+    border: 1px solid #000;
+}
+
+.timetables td {
+    padding: 5px;
+    text-align: center;
+    border: 1px solid #000;
+}
+tfoot ul {
+    padding: 0px;
+}
+
+tfoot ul li {
+    margin: 0 2px;
+    cursor: pointer;
+    padding: 1px 6px;
+    border: solid 1px #666;
+    display: inline;
 }

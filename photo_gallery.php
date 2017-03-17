@@ -17,7 +17,7 @@
         <li class="menu__item"><a class="menu__link" href="index.php">на главную</a></li>
         <li class="menu__item"><a class="menu__link" href="train_timetables.php">расписание поездов</a></li>
     </ul>
-    <h1 class="inner-title">фотогалерея</h1>
+    <h1 class="inner__title">фотогалерея</h1>
     <div class="photo">
         <a href="img/cobra.jpg" class="photo__item"><img src="img/cobra.jpg"></a>
         <a href="img/view.jpg" class="photo__item"><img src="img/view.jpg"></a>

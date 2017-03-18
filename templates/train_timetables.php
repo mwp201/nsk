@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
-    <title>Новосибирск</title>
+    <title>Новосибирск Расписание поездов дольнего следования</title>
 </head>
 <body>
 <div class="container">

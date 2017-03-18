@@ -17,7 +17,7 @@
         <li class="menu__item"><a class="menu__link" href="train_timetables.php">расписание поездов</a></li>
     </ul>
     <h1 class="main-title">Новосибирск</h1>
-    <span class="slogan">столица сибири</span>
+    <span class="slogan"><?php echo $this->arrData['slogan']; ?></span>
     <img class="gerb" src="img/gerb-1.png" alt="герб Новосибирска">
 </div>
 </body>

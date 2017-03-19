@@ -11,7 +11,7 @@
 <body>
 <div class="container">
     <h2 class="login-panel__title">Вход в панель управления</h2>
-    <form action="admin_panel.php" class="login-panel__form" method="post">
+    <form action="check_login.php" class="login-panel__form" method="post">
         <fieldset>
             <label for="user_name">Пользователь</label>
             <input type="text" name="user_name" id="user_name" autofocus>

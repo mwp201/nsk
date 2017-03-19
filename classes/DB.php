@@ -11,10 +11,10 @@ class DB
         $this->dbh = new PDO($str, $config['user'], $config['password']);
     }
 
-    public function execute(string $sql)
+    public function execute(string $sql, array $data)
     {
         $sth = $this->dbh->prepare($sql);
-        if ($sth->execute()){
+         if ($sth->execute($data)){
             return true;
         }
         return false;

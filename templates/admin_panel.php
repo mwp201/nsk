@@ -37,35 +37,35 @@
             <div class="admin-panel__train-row">
             <div class="admin-panel__train-col">
                 <label for="train_number">Номер поезда</label>
-                <input type="text" name="train_number" id="train_number" placeholder="Номер и литера поезда">
+                <input type="text" name="trainData[train_number]" id="train_number" placeholder="Номер и литера поезда">
             </div>
             <div class="admin-panel__train-col">
                 <label for="start_station">Станция отправления</label>
-                <input type="text" name="start_station" id="start_station">
+                <input type="text" name="trainData[start_station]" id="start_station">
             </div>
             <div class="admin-panel__train-col">
                 <label for="end_station">Станция прибытия</label>
-                <input type="text" name="end_station" id="end_station" placeholder="">
+                <input type="text" name="trainData[end_station]" id="end_station" placeholder="">
             </div>
             </div>
             <div class="admin-panel__train-row">
             <div class="admin-panel__train-col">
                 <label for="arrival_time">Время прибытия</label>
-                <input type="text" name="arrival_time" id="arrival_time" placeholder="в формате 00:00">
+                <input type="text" name="trainData[arrival_time]" id="arrival_time" placeholder="в формате 00:00">
             </div>
             <div class="admin-panel__train-col">
                 <label for="departure_time">Время отправления</label>
-                <input type="text" name="departure_time" id="departure_time" placeholder="в формате 00:00">
+                <input type="text" name="trainData[departure_time]" id="departure_time" placeholder="в формате 00:00">
             </div>
             <div class="admin-panel__train-col">
                 <label for="parking_time">Время стоянки</label>
-                <input type="text" name="parking_time" id="parking_time"  placeholder="в формате 1 час. 20 мин.">
+                <input type="text" name="trainData[parking_time]" id="parking_time"  placeholder="в формате 1 час. 20 мин.">
             </div>
             </div>
             <div class="admin-panel__train-row">
-            <input type="submit" formmethod="post" formaction="" value="добавить">
-            <input type="submit" formmethod="post" formaction="" value="обновить">
-            <input type="submit" formmethod="post" formaction="" value="удалить">
+            <input type="submit" formmethod="post" formaction="add_train.php" value="добавить">
+            <input type="submit" formmethod="post" formaction="edit_train.php" value="обновить">
+            <input type="submit" formmethod="post" formaction="del_train.php" value="удалить">
             </div>
         </fieldset>
     </form>

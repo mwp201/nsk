@@ -63,9 +63,9 @@
             </div>
             </div>
             <div class="admin-panel__train-row">
-            <input type="submit" formmethod="post" formaction="add_train.php" value="добавить">
-            <input type="submit" formmethod="post" formaction="edit_train.php" value="обновить">
-            <input type="submit" formmethod="post" formaction="del_train.php" value="удалить">
+            <input type="submit" formmethod="post" formaction="/add_train.php" value="добавить">
+            <input type="submit" formmethod="post" formaction="/edit_train.php" value="обновить">
+            <input type="submit" formmethod="post" formaction="/del_train.php" value="удалить">
             </div>
         </fieldset>
     </form>

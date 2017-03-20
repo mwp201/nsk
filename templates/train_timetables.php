@@ -9,6 +9,7 @@
     <title>Новосибирск Расписание поездов дольнего следования</title>
 </head>
 <body>
+<div class="main-content">
 <div class="container">
     <ul class="menu">
         <li class="menu__item"><a class="menu__link" href="search.php">поиск организаций</a></li>
@@ -62,6 +63,7 @@
               }
         );
     </script>
+</div>
 </div>
 </body>
 </html>

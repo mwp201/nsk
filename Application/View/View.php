@@ -1,4 +1,5 @@
 <?php
+namespace Application\View;
 class View
 {
     protected $arrData = [];

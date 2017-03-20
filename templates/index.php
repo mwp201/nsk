@@ -10,6 +10,7 @@
     <title>Новосибирск - Столица Сибири</title>
 </head>
 <body>
+<div class="main-content">
 <div class="container">
     <ul class="menu">
         <li class="menu__item"><a class="menu__link" href="search.php">поиск организаций</a></li>
@@ -19,6 +20,7 @@
     <h1 class="main-title">Новосибирск</h1>
     <span class="slogan"><?php echo $this->arrData['slogan']; ?></span>
     <img class="gerb" src="img/gerb-1.png" alt="герб Новосибирска">
+</div>
 </div>
 </body>
 </html>

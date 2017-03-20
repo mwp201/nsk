@@ -1,12 +1,12 @@
 <?php
-
+namespace Application\Models;
 class DB
 {
     protected $dbh;
 
     public function __construct()
     {
-        $config = require_once __DIR__.'/../config.php';
+        $config = require_once __DIR__.'/../../config.php';
         $str = 'mysql:host='.$config['host'].';dbname='.$config['dbname'];
         $this->dbh = new PDO($str, $config['user'], $config['password']);
     }

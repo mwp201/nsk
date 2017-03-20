@@ -9,6 +9,7 @@
     <title>Логин</title>
 </head>
 <body>
+<div class="admin-panel">
 <div class="container">
     <h2 class="login-panel__title">Вход в панель управления</h2>
     <form action="admin_panel.php" class="login-panel__form" method="post">
@@ -21,6 +22,7 @@
         </fieldset>
     </form>
     <a class="menu__link login-panel__link" href="index.php">вернуться на главную</a>
+</div>
 </div>
 </body>
 </html>

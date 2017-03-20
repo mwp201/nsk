@@ -1,13 +1,19 @@
 <?php
-session_start();
-if (!empty($_SESSION['user'])) {
-    echo $_SESSION['user'];
-    require_once __DIR__.'/classes/View.php';
-//require_once __DIR__.'/classes/DB.php';
-//$db = new DB;
+function __autoload($className) {
+    require __DIR__.'/classes/'.$className.'.php';
+}
+$db = new DB;
+$userData = ($db->query('SELECT user_name, user_password FROM users WHERE id = 1', []));
+$userNameDb = $userData[0][0];
+$userPasswordDb = $userData[0][1];
+$userNameForm = $userPasswordForm = null;
+if (!empty($_POST['user_name']) && !empty($_POST['password'])) {
+    $userNameForm = htmlspecialchars(trim($_POST['user_name']));
+    $userPasswordForm = htmlspecialchars(trim($_POST['password']));
+}
+if (($userNameDb === $userNameForm) && ($userPasswordDb === $userPasswordForm)){
     $view = new View;
-//$view->assign('slogan', $db->query('SELECT slogan FROM textdata', [])[0]['slogan']);
     $view->display(__DIR__.'/templates/admin_panel.php');
 } else {
-    header('Locatin:login.php');
+    header('Location:login.php');
 }

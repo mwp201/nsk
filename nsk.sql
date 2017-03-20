@@ -42,7 +42,7 @@ CREATE TABLE `timetable` (
 -- Дамп данных таблицы `timetable`
 --
 
-INSERT INTO `timetable` (`id`, `train_number`, `start_stantion`, `end_station`, `arrival_time`, `departure_time`, `parking_time`, `line_delete`, `time_record`) VALUES
+INSERT INTO `timetable` (`id`, `train_number`, `start_station`, `end_station`, `arrival_time`, `departure_time`, `parking_time`, `line_delete`, `time_record`) VALUES
 (1, '1м', 'Владивосток', 'Москва', '17:04', '17:25', '21 мин.', 0, '2017-03-16 13:00:47'),
 (2, '2мщ', 'Москва', 'Владивосток', '22:00', '22:21', '21 мин.', 0, '2017-03-16 13:00:35'),
 (3, '3з', 'Пекин', 'Москва', '16:39', '17:01', '22 мин.', 0, '2017-03-16 13:01:00'),

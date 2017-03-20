@@ -14,7 +14,7 @@
 
     <h2 class="admin-panel__title">Панель управления</h2>
     <div class="row">
-        <form action=""
+        <form action="/upload_img.php"
               method="post" enctype="multipart/form-data" class="admin-panel__photo">
             <fieldset>
                 <legend>Добавить фото в  фотогалерею</legend>
@@ -22,7 +22,7 @@
                 <input type="submit" value="добавить">
             </fieldset>
         </form>
-    <form action="edit_slogan.php" class="admin-panel__slogan" method="post">
+    <form action="/edit_slogan.php" class="admin-panel__slogan" method="post">
         <fieldset>
             <legend>Изменить слоган</legend>
             <input type="text" name="slogan" id="slogan" autofocus>

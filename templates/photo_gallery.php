@@ -19,18 +19,9 @@
     </ul>
     <h1 class="inner__title">фотогалерея</h1>
     <div class="photo">
-        <a href="img/cobra.jpg" class="photo__item"><img src="img/cobra.jpg"></a>
-        <a href="img/view.jpg" class="photo__item"><img src="img/view.jpg"></a>
-        <a href="img/view2.jpg" class="photo__item"><img src="img/view2.jpg"></a>
-        <a href="img/view3.jpg" class="photo__item"><img src="img/view3.jpg"></a>
-        <a href="img/view4.jpg" class="photo__item"><img src="img/view4.jpg"></a>
-        <a href="img/red-avenue.jpg" class="photo__item"><img src="img/red-avenue.jpg"></a>
-        <a href="img/right-panorama.jpg" class="photo__item"><img src="img/right-panorama.jpg"></a>
-        <a href="img/metro-bridge.jpg" class="photo__item"><img src="img/metro-bridge.jpg"></a>
-        <a href="img/sobor.jpg" class="photo__item"><img src="img/sobor.jpg"></a>
-        <a href="img/transsib.jpg" class="photo__item"><img src="img/transsib.jpg"></a>
-        <a href="img/dim-bridge.jpg" class="photo__item"><img src="img/dim-bridge.jpg"></a>
-        <a href="img/zoo.jpg" class="photo__item"><img src="img/zoo.jpg"></a>
+        <?php foreach ($this->arrData['arrImg'] as $img) : ?>
+        <a href="<?php echo '/../uploads/'.$img; ?>" class="photo__item"><img src="<?php echo '/../uploads/'.$img; ?>"</a>
+        <?php endforeach; ?>
     </div>
 </div>
 </body>

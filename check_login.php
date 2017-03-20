@@ -1,6 +1,9 @@
 <?php
-require_once __DIR__.'/classes/View.php';
-require_once __DIR__.'/classes/DB.php';
+/*
+ * возможно этот файл не понадобится
+function __autoload($className) {
+    require __DIR__.'/classes/'.$className.'.php';
+}
 $db = new DB;
 //$view = new View;
 $userData = ($db->query('SELECT user_name, user_password FROM users WHERE id = 1', []));
@@ -12,14 +15,9 @@ if (!empty($_POST['user_name']) && !empty($_POST['password'])) {
     $userPasswordForm = htmlspecialchars(trim($_POST['password']));
 }
 if (($userNameDb === $userNameForm) && ($userPasswordDb === $userPasswordForm)){
-    session_start();
-    $_SESSION['user'] = 'admin';
-    session_destroy();
-    header('Location:admin_panel.php');
+     $view = new View;
+    $view->display(__DIR__.'/templates/admin_panel.php');
 } else {
-    session_start();
-    $_SESSION['user'] = '';
-    session_destroy();
-    echo 'Ошибка авторизации!!';
+    header('Location:login.php');
 }
-//var_dump($userNameDb);
+*/

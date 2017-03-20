@@ -1,5 +1,8 @@
 <?php
-require_once __DIR__.'/classes/DB.php';
+//require_once __DIR__.'/classes/DB.php';
+function __autoload($className) {
+    require __DIR__.'/classes/'.$className.'.php';
+}
 $train_number = null;
 if (!empty($_POST['trainData'])) {
     $train_number = htmlspecialchars(trim($_POST['trainData']['train_number']));

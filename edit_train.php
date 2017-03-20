@@ -1,6 +1,9 @@
 <?php //TODO no work
 /*
-require_once __DIR__.'/classes/DB.php';
+//require_once __DIR__.'/classes/DB.php';
+function __autoload($className) {
+    require __DIR__.'/classes/'.$className.'.php';
+}
 $train_number = $start_station = $end_station = $arrival_time = $departure_time = $parking_time = null;
 if (!empty($_POST['trainData'])) {
     $train_number = htmlspecialchars(trim($_POST['trainData']['train_number']));

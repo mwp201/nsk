@@ -9,18 +9,30 @@
     <title>Логин</title>
 </head>
 <body>
-<div class="container">
-    <h2 class="login-panel__title">Вход в панель управления</h2>
-    <form action="admin_panel.php" class="login-panel__form" method="post">
-        <fieldset>
-            <label for="user_name">Пользователь</label>
-            <input type="text" name="user_name" id="user_name" autofocus>
-            <label for="password">Пароль</label>
-            <input type="password" name="password" id="password">
-            <input type="submit" value="войти">
-        </fieldset>
-    </form>
-    <a class="menu__link login-panel__link" href="index.php">вернуться на главную</a>
+<div class="wrapper-admin-panel">
+    <section class="main-content">
+        <header class="main-header">
+            <div class="container"></div>
+        </header>
+        <div class="container">
+            <h2 class="login-panel__title">Вход в панель управления</h2>
+            <form action="/check_login.php" class="login-panel__form" method="post">
+                <fieldset>
+                    <label for="user_name">Пользователь</label>
+                    <input type="text" name="user_name" id="user_name" autofocus>
+                    <label for="password">Пароль</label>
+                    <input type="password" name="password" id="password">
+                    <input type="submit" value="войти">
+                </fieldset>
+            </form>
+            <a class="menu__link login-panel__link" href="index.php">вернуться на главную</a>
+        </div>
+    </section>
+    <footer class="main-footer">
+        <div class="container">
+            <p></p>
+        </div>
+    </footer>
 </div>
 </body>
 </html>

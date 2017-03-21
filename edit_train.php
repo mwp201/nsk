@@ -1,34 +1,26 @@
-<?php //TODO no work
-/*
-//require_once __DIR__.'/classes/DB.php';
-function __autoload($className) {
-    require __DIR__.'/classes/'.$className.'.php';
-}
+<?php
+//session_start();
+//$id = $_SESSION['id_train'];
+//var_dump($id);
+require_once __DIR__.'/class_loader.php';
 $train_number = $start_station = $end_station = $arrival_time = $departure_time = $parking_time = null;
-if (!empty($_POST['trainData'])) {
-    $train_number = htmlspecialchars(trim($_POST['trainData']['train_number']));
-    $start_station = htmlspecialchars(trim($_POST['trainData']['start_station']));
-    $end_station = htmlspecialchars(trim($_POST['trainData']['end_station']));
-    $arrival_time = htmlspecialchars(trim($_POST['trainData']['arrival_time']));
-    $departure_time = htmlspecialchars(trim($_POST['trainData']['departure_time']));
-    $parking_time = htmlspecialchars(trim($_POST['trainData']['parking_time']));
+if (!empty($_POST['trainDataUpdate'])) {
+    $id = htmlspecialchars(trim($_POST['trainDataUpdate']['train_id']));
+    $train_number = htmlspecialchars(trim($_POST['trainDataUpdate']['train_number']));
+    $start_station = htmlspecialchars(trim($_POST['trainDataUpdate']['start_station']));
+    $end_station = htmlspecialchars(trim($_POST['trainDataUpdate']['end_station']));
+    $arrival_time = htmlspecialchars(trim($_POST['trainDataUpdate']['arrival_time']));
+    $departure_time = htmlspecialchars(trim($_POST['trainDataUpdate']['departure_time']));
+    $parking_time = htmlspecialchars(trim($_POST['trainDataUpdate']['parking_time']));
 }
-$db = new DB;
-$id = (int)$db->query('SELECT id FROM timetable
-                 WHERE train_number = :train_number AND start_station = :start_station
-                 AND end_station = :end_station AND line_delete = 0',
-                 [':train_number' => $train_number,
-                  ':start_station' => $start_station,
-                  ':end_station' => $end_station
-                 ])[0][0];
-
+$db = new Application\Models\DB;
 if ($db->execute('UPDATE timetable SET train_number = :train_number, start_station = :start_station,
                                        end_station = :end_station, arrival_time = :arrival_time,
                                        departure_time = :departure_time, parking_time = :parking_time
-                   WHERE id = $id AND line_delete = 0',
+                   WHERE id = :id AND line_delete = :line_delete',
     [':train_number' => $train_number, ':start_station' => $start_station,
      ':end_station' => $end_station, ':arrival_time' => $arrival_time,
-     ':departure_time' => $departure_time, ':parking_time' => $parking_time])) {
+     ':departure_time' => $departure_time, ':parking_time' => $parking_time,
+     ':id' => $id, ':line_delete' => false])) {
     header('Location: admin_panel.php');
-}*/
-//'UPDATE timetable SET line_delete = true WHERE train_number = :train_number',
+}

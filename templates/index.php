@@ -10,15 +10,27 @@
     <title>Новосибирск - Столица Сибири</title>
 </head>
 <body>
-<div class="container">
-    <ul class="menu">
-        <li class="menu__item"><a class="menu__link" href="search.php">поиск организаций</a></li>
-        <li class="menu__item"><a class="menu__link" href="photo_gallery.php">фотогалерея</a></li>
-        <li class="menu__item"><a class="menu__link" href="train_timetables.php">расписание поездов</a></li>
-    </ul>
-    <h1 class="main-title">Новосибирск</h1>
-    <span class="slogan"><?php echo $this->arrData['slogan']; ?></span>
-    <img class="gerb" src="img/gerb-1.png" alt="герб Новосибирска">
+<div class="wrapper">
+    <section class="main-content">
+         <header class="main-header">
+             <div class="container">
+                 <ul class="menu">
+                     <li class="menu__item"><a class="menu__link" href="photo_gallery.php">фотогалерея</a></li>
+                     <li class="menu__item"><a class="menu__link" href="train_timetables.php">расписание поездов</a></li>
+                 </ul>
+             </div>
+         </header>
+        <div class="container">
+             <h1 class="main-title">Новосибирск</h1>
+             <span class="slogan"><?php echo $this->arrData['slogan']; ?></span>
+             <img class="gerb" src="img/gerb-1.png" alt="герб Новосибирска">
+        </div>
+    </section>
+    <footer class="main-footer">
+        <div class="container">
+            <p></p>
+        </div>
+    </footer>
 </div>
 </body>
 </html>

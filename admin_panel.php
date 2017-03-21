@@ -1,19 +1,11 @@
 <?php
-function __autoload($className) {
-    require __DIR__.'/classes/'.$className.'.php';
-}
-$db = new DB;
-$userData = ($db->query('SELECT user_name, user_password FROM users WHERE id = 1', []));
-$userNameDb = $userData[0][0];
-$userPasswordDb = $userData[0][1];
-$userNameForm = $userPasswordForm = null;
-if (!empty($_POST['user_name']) && !empty($_POST['password'])) {
-    $userNameForm = htmlspecialchars(trim($_POST['user_name']));
-    $userPasswordForm = htmlspecialchars(trim($_POST['password']));
-}
-if (($userNameDb === $userNameForm) && ($userPasswordDb === $userPasswordForm)){
-    $view = new View;
+session_start();
+require_once __DIR__.'/class_loader.php';
+if (!empty($_SESSION['user'])) {
+    $view = new Application\View\View;
     $view->display(__DIR__.'/templates/admin_panel.php');
-} else {
+}else {
+    $_SESSION['user'] = '';
+    session_destroy();
     header('Location:login.php');
 }

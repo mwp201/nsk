@@ -1,7 +1,5 @@
 <?php
-function __autoload($className) {
-    require __DIR__.'/classes/'.$className.'.php';
-}
+require_once __DIR__.'/class_loader.php';
 $train_number = $start_station = $end_station = $arrival_time = $departure_time = $parking_time = null;
 if (!empty($_POST['trainData'])) {
     $train_number = htmlspecialchars(trim($_POST['trainData']['train_number']));
@@ -11,7 +9,7 @@ if (!empty($_POST['trainData'])) {
     $departure_time = htmlspecialchars(trim($_POST['trainData']['departure_time']));
     $parking_time = htmlspecialchars(trim($_POST['trainData']['parking_time']));
 }
-$db = new DB;
+$db = new Application\Models\DB;
 if ($db->execute('INSERT INTO timetable (train_number, start_station, end_station,
                               arrival_time, departure_time, parking_time)
                    VALUES(:train_number, :start_station, :end_station,

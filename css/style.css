@@ -10,15 +10,32 @@
     font-family: 'RobotoRegular';
     src: url('../fonts/RobotoRegular.woff');
 }
+html{
+    height: 100%;
+}
 body {
+    width: 100%;
+    height: 100%;
     font-size: 18px;
     font-family: MullerExtraBold, Arial, Verdana;
+}
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
     background: url("../img/bg-ind4.jpg") 50% 0 no-repeat;
+    background-size: cover;
 }
 .container {
     width: 960px;
     margin: 0 auto;
     /*outline: 1px solid red;*/
+}
+.main-content {
+    flex: 1 0 auto;
+}
+.main-footer {
+    flex: 0 0 auto;
 }
 .main-title {
     margin-top: 25px;
@@ -62,10 +79,10 @@ body {
 }
 
 .menu__item:nth-child(2) .menu__link {
-    margin-left: 41px;
+    /*margin-left: 41px;*/
 }
 .menu__item:last-child .menu__link {
-    margin-left: 41px;
+    margin-left: 320px;
 }
 .menu__link:hover,
 .menu__link-active{
@@ -145,43 +162,7 @@ tfoot ul li {
     border: solid 1px #666;
     display: inline;
 }
-/*------ search.php -------*/
-.map {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    margin: 0 auto;
-    font-family: RobotoRegular;
-    font-size: 16px;
-}
-.map form{
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    z-index: 10;
-}
-.map form input[type=text]{
-    width: 160px;
-    padding: 4px;
-    font-family: RobotoRegular;
-    font-size: 16px;
-    border: 1px solid #cccccc;
-    background-color: #ffffff;
-    outline: none;
-}
-.map form input[type=submit]{
-    font-family: RobotoRegular;
-    height: 31px;
-    outline: none;
-}
-.map form p{
-    padding: 4px 0;
-    font-family: RobotoRegular;
-    font-size: 16px;
-    text-align: center;
-    border: 1px solid #cccccc;
-    background-color: #ffffff;
-}
+
 /*----- login.php ------*/
 .login-panel__title,
 .admin-panel__title{
@@ -193,6 +174,8 @@ tfoot ul li {
     text-transform: uppercase;
     letter-spacing: 2px;
 }
+.admin-panel__title{
+    margin-top: 25px;}
 .login-panel__form{
     width: 420px;
     margin: 0 auto 35px;
@@ -240,10 +223,22 @@ tfoot ul li {
     border-radius: 30px;
 }
 /*---- admin_panel.php -----*/
-.admin-panel{
-    width: 100%;
+.wrapper-admin-panel{
+    display: flex;
+    flex-direction: column;
     height: 100%;
-    background-color: #c8e3f8;
+    /*background: #c8e3f8;*/
+    /*background-size: cover;*/
+}
+.admin-panel__link{
+    margin-left: 20px;
+}
+.admin-panel__link:hover{
+    color: #18537e;
+    text-decoration: underline;
+}
+.menu__item:last-child .admin-panel__link {
+    margin-left: 20px;
 }
 .admin-panel__slogan fieldset,
 .admin-panel__photo fieldset,
@@ -278,7 +273,7 @@ tfoot ul li {
 .admin-panel__train{
     font-family: RobotoRegular;
     color: #18537e;
-    margin-bottom: 500px;
+    margin-bottom: 30px;
 }
 .admin-panel__train label{
     display: block;
@@ -287,7 +282,7 @@ tfoot ul li {
     width: 270px;
 }
 .admin-panel__train input[type=submit]:first-child{
-    margin-left: 280px;
+    margin-left: 340px;
 }
 .admin-panel__train input[type=submit]{
     margin-right: 30px;
@@ -306,4 +301,10 @@ tfoot ul li {
 }
 .admin-panel__train-row .admin-panel__train-col:nth-child(3){
     margin-right: 0;
+}
+/*---- error.php -----*/
+.error-text{
+    text-align: center;
+    font-size: 25px;
+    color: red;
 }

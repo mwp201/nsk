@@ -23,7 +23,7 @@
         <div class="container">
              <h1 class="main-title">Новосибирск</h1>
              <span class="slogan"><?php echo $this->arrData['slogan']; ?></span>
-             <img class="gerb" src="img/gerb-1.png" alt="герб Новосибирска">
+             <img class="gerb" src="img/gerb.png" alt="герб Новосибирска">
         </div>
     </section>
     <footer class="main-footer">

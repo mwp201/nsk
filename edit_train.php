@@ -1,7 +1,4 @@
 <?php
-//session_start();
-//$id = $_SESSION['id_train'];
-//var_dump($id);
 require_once __DIR__.'/class_loader.php';
 $train_number = $start_station = $end_station = $arrival_time = $departure_time = $parking_time = null;
 if (!empty($_POST['trainDataUpdate'])) {

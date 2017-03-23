@@ -24,14 +24,16 @@
             <h1 class="inner__title">фотогалерея</h1>
             <div class="photo">
                 <?php foreach ($this->arrData['arrImg'] as $img) : ?>
-                    <a href="<?php echo '/../uploads/'.$img; ?>" class="photo__item"><img src="<?php echo '/../uploads/'.$img; ?>"</a>
+                    <a href="<?php echo '/../uploads/'.$img; ?>" class="photo__item"><img src="<?php echo '/../uploads/'.$img; ?>"></a>
                 <?php endforeach; ?>
             </div>
         </div>
     </section>
     <footer class="main-footer">
         <div class="container">
-            <p></p>
+            <div class="copyright">
+               <p class="copyright__text">Фотограф <a class="copyright__link" href="https://vk.com/gelio">Слава Gelio Степанов</a><span> &copy;</span></p>
+            </div>
         </div>
     </footer>
 </div>

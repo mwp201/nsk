@@ -10,5 +10,7 @@ $db = new Application\Models\DB;
 if ($db->execute('UPDATE timetable SET line_delete = :line_delete WHERE train_number = :train_number AND start_station = :start_station
                   AND end_station = :end_station',
     [':line_delete' => true, ':train_number' => $train_number, ':start_station' => $start_station, ':end_station' => $end_station])) {
+    session_start();
+    $_SESSION['user'] = 'admin';
     header('Location: admin_panel.php');
 }

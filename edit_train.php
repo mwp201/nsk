@@ -22,5 +22,7 @@ if ($db->execute('UPDATE timetable SET train_number = :train_number, start_stati
      ':end_station' => $end_station, ':arrival_time' => $arrival_time,
      ':departure_time' => $departure_time, ':parking_time' => $parking_time,
      ':id' => $id, ':line_delete' => false])) {
+    session_start();
+    $_SESSION['user'] = 'admin';
     header('Location: admin_panel.php');
 }

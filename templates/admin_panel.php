@@ -14,6 +14,7 @@ if(!empty($_SESSION['id_train'])) {
     <link rel="stylesheet" href="../css/normalize.css">
     <link rel="stylesheet" href="../css/style.css">
     <title>Панель управления</title>
+    <script src="js/ajax.js"></script>
 </head>
 <body>
 <div class="wrapper-admin-panel">
@@ -54,29 +55,29 @@ if(!empty($_SESSION['id_train'])) {
                         <div class="admin-panel__train-row">
                             <div class="admin-panel__train-col">
                                 <label for="train_number">Номер поезда</label>
-                                <input type="text" name="trainData[train_number]" id="train_number" placeholder="Номер и литера поезда">
+                                <input type="text" name="trainData[train_number]" id="" placeholder="Номер и литера поезда">
                             </div>
                             <div class="admin-panel__train-col">
                                 <label for="start_station">Станция отправления</label>
-                                <input type="text" name="trainData[start_station]" id="start_station">
+                                <input type="text" name="trainData[start_station]" id="">
                             </div>
                             <div class="admin-panel__train-col">
                                 <label for="end_station">Станция прибытия</label>
-                                <input type="text" name="trainData[end_station]" id="end_station" placeholder="">
+                                <input type="text" name="trainData[end_station]" id="" placeholder="">
                             </div>
                         </div>
                         <div class="admin-panel__train-row">
                             <div class="admin-panel__train-col">
                                 <label for="arrival_time">Время прибытия</label>
-                                <input type="text" name="trainData[arrival_time]" id="arrival_time" placeholder="в формате 00:00">
+                                <input type="text" name="trainData[arrival_time]" id="" value="00:00" placeholder="в формате 00:00">
                             </div>
                             <div class="admin-panel__train-col">
                                 <label for="departure_time">Время отправления</label>
-                                <input type="text" name="trainData[departure_time]" id="departure_time" placeholder="в формате 00:00">
+                                <input type="text" name="trainData[departure_time]" id="" value="00:00" placeholder="в формате 00:00">
                             </div>
                             <div class="admin-panel__train-col">
                                 <label for="parking_time">Время стоянки</label>
-                                <input type="text" name="trainData[parking_time]" id="parking_time"  placeholder="в формате 1 час. 20 мин.">
+                                <input type="text" name="trainData[parking_time]" id=""  value="мин." placeholder="в формате 1 час. 20 мин.">
                             </div>
                         </div>
                         <div class="admin-panel__train-row">
@@ -92,15 +93,15 @@ if(!empty($_SESSION['id_train'])) {
                         <div class="admin-panel__train-row">
                             <div class="admin-panel__train-col">
                                 <label for="train_number">Номер поезда</label>
-                                <input type="text" name="trainData[train_number]" placeholder="Номер и литера поезда">
+                                <input type="text" name="trainData[train_number]"  id="train_number" placeholder="Номер и литера поезда" onchange="getStation();">
                             </div>
                             <div class="admin-panel__train-col">
                                 <label for="start_station">Станция отправления</label>
-                                <input type="text" name="trainData[start_station]">
+                                <input type="text" name="trainData[start_station]" id="start_station">
                             </div>
                             <div class="admin-panel__train-col">
                                 <label for="end_station">Станция прибытия</label>
-                                <input type="text" name="trainData[end_station]">
+                                <input type="text" name="trainData[end_station]" id="end_station">
                             </div>
                         </div>
                         <div class="admin-panel__train-row">
@@ -161,6 +162,46 @@ if(!empty($_SESSION['id_train'])) {
             <p></p>
         </div>
     </footer>
+    <script>
+
+        // получить станции отправления и прибытия при вводе номера поезда
+        function getStation() {
+
+            var trainNumber = document.getElementById('train_number').value;
+            var req = getXmlHttp();
+            //console.log(req);
+            req.open('GET', 'get_station.php?train=' + trainNumber, true);
+
+
+            req.onreadystatechange = function () {
+                if (req.readyState == 4) {
+                    /*
+                    if (req.status == 200) {
+                        console.log(req.responseText)
+                    } else {
+                        console.log("Error", req.statusText);
+                    }*/
+                   var rez = req.responseText;
+                        var arr = JSON.parse(rez);
+                        console.log(arr);
+                        document.getElementById('start_station').value = arr[0];
+                        document.getElementById('end_station').value = arr[1];
+                        //document.getElementById('sale-plan').value = arr[2];
+                        //document.getElementById('check-plan').value = arr[3];
+                       if (!arr) {
+                            alert("Поезда с № " + trainNumber + " не существует!");
+                            //setTimeout(function(){document.forms.form_plan.reset()}, 200);
+                        }
+                   }
+                }
+            req.send();
+            }
+
+
+
+
+
+    </script>
 </div>
 </body>
 </html>

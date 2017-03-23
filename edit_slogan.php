@@ -5,5 +5,9 @@ if (!empty($_POST['slogan'])) {
     $slogan = htmlspecialchars(trim($_POST['slogan']));
 }
 $db = new Application\Models\DB;
-$db->query('UPDATE textdata SET slogan =:slogan', [':slogan' => $slogan]);
-header('Location: admin_panel.php');
+if ($db->execute('UPDATE textdata SET slogan =:slogan', [':slogan' => $slogan])) {
+    session_start();
+    $_SESSION['user'] = 'admin';
+    header('Location: admin_panel.php');
+}
+

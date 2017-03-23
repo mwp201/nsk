@@ -22,8 +22,9 @@ body {
 .wrapper{
     display: flex;
     flex-direction: column;
-    height: 100%;
-    background: url("../img/bg-ind4.jpg") 50% 0 no-repeat;
+    min-height: 100%;
+    background: url("../img/bg-ind4.jpg") 50% 0 no-repeat,
+                url("../img/bg-bottom-line.jpg") bottom repeat-y;
     background-size: cover;
 }
 .container {
@@ -36,6 +37,7 @@ body {
 }
 .main-footer {
     flex: 0 0 auto;
+    margin-bottom: 30px;
 }
 .main-title {
     margin-top: 25px;
@@ -86,7 +88,7 @@ body {
 }
 .menu__link:hover,
 .menu__link-active{
-    color: #ffffff;
+    color: orangered;
 }
 
 .gerb {
@@ -108,6 +110,7 @@ body {
     letter-spacing: 12px;
 }
 .photo{
+    margin-bottom: 20px;
     /*padding-top: 50px;*/
     font-size: 0;
 }
@@ -122,6 +125,17 @@ body {
 }
 .photo__item img{
     width: 300px;
+}
+.copyright__text {
+    color: orangered;
+    text-align: center;
+}
+.copyright__link{
+    color: orangered;
+    text-decoration: none;
+}
+.copyright__link:hover{
+    text-decoration: underline;
 }
 /*------- train_timetables.php__---------*/
 .inner__title--small {
@@ -214,7 +228,7 @@ tfoot ul li {
     outline: none;
 }
 .login-panel__form input[type=submit]:hover{
-    color: #ffffff;
+    color: orangered;
 }
 .login-panel__link{
     margin-left: 348px;

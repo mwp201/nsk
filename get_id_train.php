@@ -17,4 +17,5 @@ $id = (int)$db->query('SELECT id FROM timetable
         ':end_station' => $end_station
     ])[0][0];
 $_SESSION['id_train'] = $id;
+$_SESSION['user'] = 'admin';
 header('Location:admin_panel.php');

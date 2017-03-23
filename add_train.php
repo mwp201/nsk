@@ -17,5 +17,7 @@ if ($db->execute('INSERT INTO timetable (train_number, start_station, end_statio
     [':train_number' => $train_number, ':start_station' => $start_station,
         ':end_station' => $end_station, ':arrival_time' => $arrival_time,
         ':departure_time' => $departure_time, ':parking_time' => $parking_time])) {
+    session_start();
+    $_SESSION['user'] = 'admin';
     header('Location: admin_panel.php');
 }
